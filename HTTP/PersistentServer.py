@@ -14,7 +14,7 @@ class Server(BaseHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-httpd = HTTPServer(('localhost', 8001), Server)
+httpd = HTTPServer(('localhost', 3045), Server)
 print('http server is starting...')
 print('http server is running...')
 httpd.serve_forever()
