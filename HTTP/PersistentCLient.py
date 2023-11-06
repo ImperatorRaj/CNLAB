@@ -3,9 +3,9 @@ import sys
 
 print('input file name (ex. test.html): ', end='')
 file_name = input()
-
+print("Connection established")
+conn = http.client.HTTPConnection("localhost",3045)
 while file_name.lower() != 'exit':
-    conn = http.client.HTTPConnection("localhost", 8001)
     conn.request("GET", "/" + file_name)
 
     resp = conn.getresponse()
@@ -14,9 +14,8 @@ while file_name.lower() != 'exit':
     data = resp.read()
     print(data.decode())
 
-    conn.close()
 
-    print('input file name : ', end='')
+    print('input file name (ex. test.html): ', end='')
     file_name = input()
-
-print('Exiting...')
+conn.close()
+print('Connection terminated and Exiting...')
