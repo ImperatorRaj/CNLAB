@@ -1,6 +1,6 @@
 import random
 import time
-
+random.seed(9821)
 WINDOW_SIZE = 3  # Window size for the sender and receiver
 MAX_FRAMES = 10  # Total number of frames to be sent
 
